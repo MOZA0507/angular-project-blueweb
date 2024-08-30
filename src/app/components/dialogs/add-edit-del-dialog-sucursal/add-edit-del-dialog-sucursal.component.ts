@@ -5,8 +5,8 @@ import { ButtonModule } from 'primeng/button';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
-import { SucursalService } from '../../services/sucursal/sucursal.service';
-import { EmpresaService } from '../../services/empresa/empresa.service';
+import { SucursalService } from '../../../services/sucursal/sucursal.service';
+import { EmpresaService } from '../../../services/empresa/empresa.service';
 
 
 @Component({

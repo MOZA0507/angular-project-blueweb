@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
-import { SucursalService } from '../../services/sucursal/sucursal.service';
-import { AddEditDialogComponent } from '../add-edit-dialog/add-edit-dialog.component';
-import { AddEditDelDialogSucursalComponent } from '../add-edit-del-dialog-sucursal/add-edit-del-dialog-sucursal.component';
+import { SucursalService } from '../../../services/sucursal/sucursal.service';
+import { AddEditDialogComponent } from '../../dialogs/add-edit-dialog/add-edit-dialog.component';
+import { AddEditDelDialogSucursalComponent } from '../../dialogs/add-edit-del-dialog-sucursal/add-edit-del-dialog-sucursal.component';
 
 interface Column {
   field: string;

@@ -1,22 +1,22 @@
 import { Component } from '@angular/core';
-import { TopbarComponent } from '../shared/topbar/topbar.component';
-import { SidebarComponent } from '../shared/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
-import { TableComponent } from '../shared/table/table.component';
+import { ImageModule } from 'primeng/image';
+import { TopbarComponent } from '../../components/shared/topbar/topbar.component';
+import { SidebarComponent } from '../../components/shared/sidebar/sidebar.component';
 
 @Component({
-  selector: 'app-inicio',
+  selector: 'app-bienvenido',
   standalone: true,
   imports: [
+    ImageModule,
     TopbarComponent,
     SidebarComponent,
-    TableComponent,
     CommonModule
   ],
-  templateUrl: './inicio.component.html',
-  styleUrl: './inicio.component.css'
+  templateUrl: './bienvenido.component.html',
+  styleUrl: './bienvenido.component.css'
 })
-export class InicioComponent {
+export class BienvenidoComponent {
   sidebarOpen:boolean = false;
   title:string ='';
 

@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { InicioComponent } from './inicio/inicio.component';
-import { AuthGuard } from './auth/auth.guard';
-import { SucursalesComponent } from './sucursales/sucursales.component';
-import { BienvenidoComponent } from './bienvenido/bienvenido.component';
+import { LoginComponent } from './pages/login/login.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
+import { AuthGuard } from './guards/auth/auth.guard';
+import { SucursalesComponent } from './pages/sucursales/sucursales.component';
+import { BienvenidoComponent } from './pages/bienvenido/bienvenido.component';
 
 export const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'prefix'},

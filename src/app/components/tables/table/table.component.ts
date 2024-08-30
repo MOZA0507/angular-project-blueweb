@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
-import { EmpresaService } from '../../services/empresa/empresa.service';
-import { SucursalService } from '../../services/sucursal/sucursal.service';
-import { AddEditDialogComponent } from '../add-edit-dialog/add-edit-dialog.component';
+import { EmpresaService } from '../../../services/empresa/empresa.service';
+import { SucursalService } from '../../../services/sucursal/sucursal.service';
+import { AddEditDialogComponent } from '../../dialogs/add-edit-dialog/add-edit-dialog.component';
 
 interface Column {
   field: string;

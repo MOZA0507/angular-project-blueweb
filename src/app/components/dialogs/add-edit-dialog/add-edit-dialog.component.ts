@@ -4,7 +4,7 @@ import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { InputSwitchModule } from 'primeng/inputswitch'
 import { FormsModule } from '@angular/forms';
-import { EmpresaService } from '../../services/empresa/empresa.service';
+import { EmpresaService } from '../../../services/empresa/empresa.service';
 
 @Component({
   selector: 'app-add-edit-dialog',

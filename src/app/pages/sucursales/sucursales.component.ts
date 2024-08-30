@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { TopbarComponent } from '../shared/topbar/topbar.component';
-import { SidebarComponent } from '../shared/sidebar/sidebar.component';
+import { TopbarComponent } from '../../components/shared/topbar/topbar.component';
+import { SidebarComponent } from '../../components/shared/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
-import { TableSursalesComponent } from '../shared/table-sursales/table-sursales.component';
+import { TableSursalesComponent } from '../../components/tables/table-sursales/table-sursales.component';
 
 @Component({
   selector: 'app-sucursales',

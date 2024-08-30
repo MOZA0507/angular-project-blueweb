@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { SucursalService } from '../../services/sucursal/sucursal.service';
+import { SucursalService } from '../../../services/sucursal/sucursal.service';
 import { Router } from '@angular/router';
 
 @Component({
