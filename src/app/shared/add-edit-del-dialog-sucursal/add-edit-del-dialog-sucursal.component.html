@@ -1,0 +1,77 @@
+<div class="card flex justify-content-center">
+  <p-dialog header="{{buttonAction}} Sucursal" [modal]="true" [(visible)]="display" [style]="{ width: '25rem' }">
+    <div *ngIf="buttonAction === 'Add'; else actionEditDelete">
+      <span class="p-text-secondary block mb-5">Añadir una nueva Sucursal.</span>
+      <div class="flex align-items-center gap-3 mb-3">
+          <label for="nombre" class="font-semibold w-6rem">Nombre Sucursal</label>
+          <input pInputText id="nombre" class="flex-auto" autocomplete="off" [(ngModel)]="sucursalName"/>
+      </div>
+      <div class="flex align-items-center gap-3 mb-5">
+          <label for="city" class="font-semibold w-6rem">Ciudad</label>
+          <input pInputText id="city" class="flex-auto" autocomplete="off" [(ngModel)]="city" />
+      </div>
+      <div class="flex align-items-center gap-3 mb-5">
+        <label for="state" class="font-semibold w-6rem">Estado</label>
+        <input pInputText id="state" class="flex-auto" autocomplete="off" [(ngModel)]="state" />
+    </div>
+    <div class="flex align-items-center gap-3 mb-5">
+      <label for="idEmpresa" class="font-semibold w-6rem">Empresa</label>
+      <p-dropdown 
+        [options]="empresas" 
+        [(ngModel)]="selectedEmpresa" 
+        optionLabel="nombreEmpresa" 
+        placeholder="Selecciona Empresa" />
+    </div>
+      <div class="flex align-items-center gap-3 mb-5">
+        <label for="active" class="font-semibold w-6rem">Activo</label>
+        <p-inputSwitch [(ngModel)]="active" />
+    </div>
+      <div class="flex justify-content-end gap-2">
+          <p-button label="Cancel" severity="secondary" (onClick)="onClose()" />
+          <p-button label="Save" (onClick)="onSave()" />
+      </div>
+    </div>
+
+    <ng-template #actionEditDelete>
+      <div *ngIf="buttonAction==='Edit'; else actionDelete">
+        <span class="p-text-secondary block mb-5">Editar Sucursal.</span>
+        <div class="flex align-items-center gap-3 mb-3">
+          <label for="nombre" class="font-semibold w-6rem">Nombre Sucursal</label>
+          <input pInputText id="nombre" class="flex-auto" autocomplete="off" [(ngModel)]="sucursalName"/>
+      </div>
+      <div class="flex align-items-center gap-3 mb-5">
+        <label for="city" class="font-semibold w-6rem">Ciudad</label>
+        <input pInputText id="city" class="flex-auto" autocomplete="off" [(ngModel)]="city" />
+      </div>
+    <div class="flex align-items-center gap-3 mb-5">
+      <label for="state" class="font-semibold w-6rem">Estado</label>
+      <input pInputText id="state" class="flex-auto" autocomplete="off" [(ngModel)]="state" />
+    </div>
+    <div class="flex align-items-center gap-3 mb-5">
+      <label for="idEmpresa" class="font-semibold w-6rem">Empresa</label>
+      <p-dropdown 
+        [options]="empresas" 
+        [(ngModel)]="selectedEmpresa" 
+        optionLabel="nombreEmpresa" 
+        placeholder="Selecciona Empresa" />
+    </div>
+      <div class="flex align-items-center gap-3 mb-5">
+        <label for="active" class="font-semibold w-6rem">Activo</label>
+        <p-inputSwitch [(ngModel)]="active" />
+    </div>
+      <div class="flex justify-content-end gap-2">
+          <p-button label="Cancel" severity="secondary" (onClick)="onClose()" />
+          <p-button label="Save" (onClick)="onSave()" />
+      </div>
+      </div>
+    </ng-template>
+
+    <ng-template #actionDelete>
+      <span class="p-text-secondary block mb-5">Eliminar Sucursal.</span>
+      <div class="flex justify-content-end gap-2">
+          <p-button label="Cancel" severity="secondary" (onClick)="onClose()" />
+          <p-button label="Delete" severity="danger" (onClick)="onSave()" />
+      </div>
+    </ng-template>
+  </p-dialog>
+</div>

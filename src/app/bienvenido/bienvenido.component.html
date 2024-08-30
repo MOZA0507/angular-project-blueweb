@@ -1,0 +1,15 @@
+<app-topbar (toggleSidebar)="onToggleSidebar()"></app-topbar>
+<app-sidebar *ngIf="sidebarOpen" 
+[isOpen]="sidebarOpen" 
+(closeSidebar)="onCloseSidebar()"
+(optionSelected)="onOptionSidebarSelected($event)"
+></app-sidebar>
+<div class="flex justify-center text-xl font-semibold text-green-700">
+  <h3>Bienvenido a Inventario App</h3>
+</div>
+<div class="flex justify-center">
+  <p-image 
+    src="/assets/disc/logo.png" 
+    alt="Image" 
+    width="350" />
+</div>

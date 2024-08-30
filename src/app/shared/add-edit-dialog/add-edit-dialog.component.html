@@ -1,0 +1,53 @@
+<div class="card flex justify-content-center">
+  <p-dialog header="{{buttonAction}} Empresa" [modal]="true" [(visible)]="display" [style]="{ width: '25rem' }">
+    <div *ngIf="buttonAction === 'Add'; else actionEditDelete">
+      <span class="p-text-secondary block mb-5">Añadir una nueva Empresa.</span>
+      <div class="flex align-items-center gap-3 mb-3">
+          <label for="nombre" class="font-semibold w-6rem">Nombre Empresa</label>
+          <input pInputText id="nombre" class="flex-auto" autocomplete="off" [(ngModel)]="empresaName"/>
+      </div>
+      <div class="flex align-items-center gap-3 mb-5">
+          <label for="clave" class="font-semibold w-6rem">Clave Empresa</label>
+          <input pInputText id="clave" class="flex-auto" autocomplete="off" [(ngModel)]="alias" />
+      </div>
+      <div class="flex align-items-center gap-3 mb-5">
+        <label for="active" class="font-semibold w-6rem">Activo</label>
+        <p-inputSwitch [(ngModel)]="active" />
+    </div>
+      <div class="flex justify-content-end gap-2">
+          <p-button label="Cancel" severity="secondary" (onClick)="onClose()" />
+          <p-button label="Save" (onClick)="onSave()" />
+      </div>
+    </div>
+
+    <ng-template #actionEditDelete>
+      <div *ngIf="buttonAction==='Edit'; else actionDelete">
+        <span class="p-text-secondary block mb-5">Editar Empresa.</span>
+      <div class="flex align-items-center gap-3 mb-3">
+          <label for="nombre" class="font-semibold w-6rem">Nombre Empresa</label>
+          <input pInputText id="nombre" class="flex-auto" autocomplete="off" [(ngModel)]="empresaName"/>
+      </div>
+      <div class="flex align-items-center gap-3 mb-5">
+          <label for="clave" class="font-semibold w-6rem">Clave Empresa</label>
+          <input pInputText id="clave" class="flex-auto" autocomplete="off" [(ngModel)]="alias" />
+      </div>
+      <div class="flex align-items-center gap-3 mb-5">
+        <label for="active" class="font-semibold w-6rem">Activo</label>
+        <p-inputSwitch [(ngModel)]="active" />
+    </div>
+      <div class="flex justify-content-end gap-2">
+          <p-button label="Cancel" severity="secondary" (onClick)="onClose()" />
+          <p-button label="Save" (onClick)="onSave()" />
+      </div>
+      </div>
+    </ng-template>
+
+    <ng-template #actionDelete>
+      <span class="p-text-secondary block mb-5">Eliminar Empresa.</span>
+      <div class="flex justify-content-end gap-2">
+          <p-button label="Cancel" severity="secondary" (onClick)="onClose()" />
+          <p-button label="Delete" severity="danger" (onClick)="onSave()" />
+      </div>
+    </ng-template>
+  </p-dialog>
+</div>

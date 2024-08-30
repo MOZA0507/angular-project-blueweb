@@ -1,0 +1,53 @@
+<div class="flex">
+  <div class="flex-auto min-h-screen m-0">
+    <div class="flex place-content-center mt-20 gap-2">
+      <label for="username">Username</label>
+      <input 
+          pInputText 
+          id="username" 
+          aria-describedby="username-help"
+          [(ngModel)]="username" />
+    </div>
+    <div>
+      <small
+        *ngIf="isUsernameMessageVisible"
+        id="username-help"
+        class="flex place-content-center text-red-700 mt-2">
+        El usuario es mas largo de 12 caracteres
+    </small>
+    </div>
+    <div class="flex place-content-center mt-4 gap-2">
+      <label for="password">Password</label>
+      <input 
+          pInputText 
+          id="password" 
+          aria-describedby="password-help" 
+          [(ngModel)]="password" />
+    </div>
+    <div>
+      <small
+      *ngIf="isPasswordMessageVisible"
+      id="password-help"
+      class="flex place-content-center text-red-700 mt-2">
+        La contraseña es mas larga de 18 caracteres
+      </small>
+    </div>
+    <div class="flex place-content-center mt-4">
+      <p-button label="Login" severity="success" (onClick)="verifyLogin()"/>
+    </div>
+    <div>
+      <small
+      *ngIf="isLoginMessageVisible"
+      id="login-help"
+      class="flex place-content-center text-red-700 mt-2">
+        La contraseña y/o el usuario son incorrectos
+      </small>
+    </div>
+  </div>
+  <div class="flex-auto bg-green-600 min-h-screen m-0">
+    <h3 class="flex place-content-center text-slate-50 mt-20">Inventario Online</h3>
+  </div>
+</div>
+
+
+

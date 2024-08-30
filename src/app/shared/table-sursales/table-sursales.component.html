@@ -1,0 +1,52 @@
+<div class="ml-20 mr-20">
+  <div class="flex justify-between">
+    <div>
+      <h2>{{title}}</h2>
+    </div>
+    <div>
+      <p-button label="Add" severity="success" icon="pi pi-discord" (onClick)="openDialog($event,null)"/>
+    </div>
+  </div>
+  
+  <p-table [columns]="cols" 
+  [value]="info" 
+  [tableStyle]="{ 'min-width': '50rem' }"
+  [paginator]="true"
+  [rows]="5"
+  [rowsPerPageOptions]="[5, 10, 20]">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{ col.header }}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+            <td *ngFor="let col of columns">
+              <ng-container *ngIf="col.type !== 'button'; else buttonTemplate">
+                {{ rowData[col.field] }}
+              </ng-container>
+
+              <ng-template #buttonTemplate>
+                <ng-container *ngFor="let btn of col.buttons">
+                  <p-button
+                  icon="{{btn.icon}}"
+                  label="{{btn.label}}"
+                  severity="secondary"
+                  class="mr-3"
+                  (onClick)="openDialog($event, rowData)"
+                  />
+                </ng-container>
+              </ng-template>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+</div>
+<app-add-edit-del-dialog-sucursal
+[display]="displayDialog"
+[buttonAction]="buttonAction"
+[dialogInfo]="selectedRow"
+(close)="closeDialog($event)">
+</app-add-edit-del-dialog-sucursal>

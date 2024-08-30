@@ -1,0 +1,7 @@
+<app-topbar (toggleSidebar)="onToggleSidebar()"></app-topbar>
+<app-sidebar *ngIf="sidebarOpen" 
+[isOpen]="sidebarOpen" 
+(closeSidebar)="onCloseSidebar()"
+(optionSelected)="onOptionSidebarSelected($event)"
+></app-sidebar>
+<app-table-sursales [title]="titleLabel"></app-table-sursales>
