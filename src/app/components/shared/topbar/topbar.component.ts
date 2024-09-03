@@ -1,21 +1,21 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { ImageModule } from 'primeng/image';
-import { AuthService } from '../../../services/auth/auth.service';
+import { LogoutDialogComponent } from '../../dialogs/logout-dialog/logout-dialog.component';
 
 @Component({
   selector: 'app-topbar',
   standalone: true,
-  imports: [ButtonModule, ImageModule],
+  imports: [ButtonModule, ImageModule, LogoutDialogComponent],
   templateUrl: './topbar.component.html',
   styleUrl: './topbar.component.css'
 })
 export class TopbarComponent {
   username: string|null = ''
+  displayDialog: boolean = false;
   @Output() toggleSidebar = new EventEmitter<void>()
 
-  constructor(private router: Router, private authService: AuthService){
+  constructor(){
     this.getLocalStorageUser();
   }
 
@@ -27,8 +27,11 @@ export class TopbarComponent {
     this.username = localStorage.getItem('username');
   }
 
-  logout(){
-    this.authService.logout();
-    this.router.navigate(['/login']);
+  logoutDisplay(){
+    this.displayDialog = true;
+  }
+
+  closeLogoutDisplay(){
+    this.displayDialog = false;
   }
 }

@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
+import { PasswordModule } from 'primeng/password';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
@@ -15,7 +16,8 @@ import { AuthService } from '../../services/auth/auth.service';
     FormsModule,
     ButtonModule,
     CommonModule,
-    DividerModule
+    DividerModule,
+    PasswordModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'

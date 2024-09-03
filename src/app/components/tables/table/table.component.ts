@@ -3,7 +3,6 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { EmpresaService } from '../../../services/empresa/empresa.service';
-import { SucursalService } from '../../../services/sucursal/sucursal.service';
 import { AddEditDialogComponent } from '../../dialogs/add-edit-dialog/add-edit-dialog.component';
 
 interface Column {
@@ -24,7 +23,12 @@ interface Product {
 @Component({
   selector: 'app-table',
   standalone: true,
-  imports: [TableModule, ButtonModule, CommonModule, AddEditDialogComponent],
+  imports: [
+    TableModule,
+    ButtonModule,
+    CommonModule,
+    AddEditDialogComponent,
+  ],
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })
@@ -58,13 +62,11 @@ export class TableComponent{
     );
   }
 
-  openDialog(event: Event, rowData: any): void {
+  openDialog(buttonAction: string, rowData: any): void {
     this.selectedRow = rowData;
     console.log(this.selectedRow);
     this.buttonAction = '';
-    let buttonText = ''
-    buttonText = (event.target as HTMLButtonElement).innerText;
-    this.buttonAction = buttonText;
+    this.buttonAction = buttonAction;
     this.displayDialog = true;
   }
 

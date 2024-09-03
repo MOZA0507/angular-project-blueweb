@@ -66,13 +66,11 @@ export class TableSursalesComponent {
     );
   }
 
-  openDialog(event: Event, rowData: any): void {
+  openDialog(buttonAction: string, rowData: any): void {
     this.selectedRow = rowData;
     console.log(this.selectedRow);
     this.buttonAction = '';
-    let buttonText = '';
-    buttonText = (event.target as HTMLButtonElement).innerText;
-    this.buttonAction = buttonText;
+    this.buttonAction = buttonAction;
     this.displayDialog = true;
   }
 

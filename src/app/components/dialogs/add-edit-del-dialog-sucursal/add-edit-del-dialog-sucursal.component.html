@@ -1,6 +1,6 @@
 <div class="card flex justify-content-center">
   <p-dialog header="{{buttonAction}} Sucursal" [modal]="true" [(visible)]="display" [style]="{ width: '25rem' }">
-    <div *ngIf="buttonAction === 'Add'; else actionEditDelete">
+    <div *ngIf="buttonAction === 'Agregar'; else actionEditDelete">
       <span class="p-text-secondary block mb-5">Añadir una nueva Sucursal.</span>
       <div class="flex align-items-center gap-3 mb-3">
           <label for="nombre" class="font-semibold w-6rem">Nombre Sucursal</label>
@@ -33,7 +33,7 @@
     </div>
 
     <ng-template #actionEditDelete>
-      <div *ngIf="buttonAction==='Edit'; else actionDelete">
+      <div *ngIf="buttonAction==='Editar'; else actionDelete">
         <span class="p-text-secondary block mb-5">Editar Sucursal.</span>
         <div class="flex align-items-center gap-3 mb-3">
           <label for="nombre" class="font-semibold w-6rem">Nombre Sucursal</label>
@@ -75,3 +75,4 @@
     </ng-template>
   </p-dialog>
 </div>
+<p-toast position="bottom-right" [life]="5000"/>

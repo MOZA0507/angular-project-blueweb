@@ -9,8 +9,12 @@
     <span class="font-semibold text-3xl">Inventario Online</span>
     <nav class="space-x-6">
       <a class="text-xl">{{username}}</a>
-      <p-button label="Logout" severity="secondary" (onClick)="logout()"/>
+      <p-button label="Logout" severity="secondary" (onClick)="logoutDisplay()"/>
     </nav>
   </div>
 </header>
 <hr>
+<app-logout-dialog
+  [display]="displayDialog"
+  (close)="closeLogoutDisplay()"
+></app-logout-dialog>

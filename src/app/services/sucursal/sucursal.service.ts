@@ -35,16 +35,16 @@ export class SucursalService {
       { field: 'activo', header: 'Activo'},
       { 
         field: 'options',
-        header: 'Options',
+        header: 'Opciones',
         type:'button',
         buttons: [
           {
-            label: 'Edit',
+            label: 'Editar',
             icon: 'pi pi-pencil',
             severity: 'warning'
           },
           {
-            label: 'Delete',
+            label: 'Borrar',
             icon: 'pi pi-trash',
             severity: 'danger'
           }
