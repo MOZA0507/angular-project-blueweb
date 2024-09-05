@@ -1,4 +1,4 @@
-<div class="sidebar" [class.open]="isOpen">
+<!-- <div class="sidebar" [class.open]="isOpen">
   <div class="bg-gray-600/50 min-h-screen w-full fixed top-0 left-0 right-0 backdrop-blur-sm z-40"></div>
     <div class="bg-green-600 min-h-screen w-80 fixed top-0 left-0 z-50">
       <div  iv class="pt-3">
@@ -16,35 +16,22 @@
           cursor-pointer py-3 mb-2">Sucursales</div>
       </div>
   </div>
-</div>
+</div> -->
 
 
-<!-- <div class="sidebar" [class.open]="isOpen">
+<div class="sidebar" [class.open]="isOpen">
   <div class="bg-gray-600/50 min-h-screen w-full fixed top-0 left-0 right-0 backdrop-blur-sm z-40"></div>
-    <div class="bg-green-600 min-h-screen w-80 fixed top-0 left-0 z-50">
+    <div class="bg-white min-h-screen w-42 fixed top-0 left-0 z-50">
       <div  iv class="pt-3">
-        <button class="ml-4 bg-transparent border-none text-white mb-14"
+        <button class="ml-4 bg-transparent border-none text-black mb-14"
           (click)="onClose()">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
           </svg>
         </button>
-        <p-menu [model]="items">
-          <ng-template pTemplate="item" let-item>
-              <ng-container *ngIf="item.route; else elseBlock">
-                  <a [routerLink]="item.route" class="p-menuitem-link">
-                      <span [class]="item.icon"></span>
-                      <span class="ml-2">{{ item.label }}</span>
-                  </a>
-              </ng-container>
-              <ng-template #elseBlock>
-                  <a [href]="item.url" class="p-menuitem-link">
-                      <span [class]="item.icon"></span>
-                      <span class="ml-2">{{ item.label }}</span>
-                  </a>
-              </ng-template>
-          </ng-template>
-      </p-menu>
+        <div class="mx-1 w-full">
+          <p-menu [model]="items" />
+        </div>
       </div>
   </div>
-</div> -->
+</div>

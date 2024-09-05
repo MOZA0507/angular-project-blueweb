@@ -21,24 +21,28 @@ export class SidebarComponent {
   ngOnInit() {
     this.items = [
         {
-            label: 'Navigate',
+            label: 'Navegar',
             items: [
                 {
-                    label: 'Router Link',
-                    icon: 'pi pi-palette',
-                    route: '/guides/csslayer'
+                    label: 'Inicio',
+                    icon: 'pi pi-home',
+                    command: () => {
+                      this.router.navigate(['/inicio']);
+                  }
                 },
                 {
-                    label: 'Programmatic',
-                    icon: 'pi pi-link',
+                    label: 'Empresas',
+                    icon: 'pi pi-building',
                     command: () => {
-                        this.router.navigate(['/installation']);
+                        this.router.navigate(['/empresas']);
                     }
                 },
                 {
-                    label: 'External',
-                    icon: 'pi pi-home',
-                    url: 'https://angular.io//'
+                    label: 'Sucursales',
+                    icon: 'pi pi-shop',
+                    command: () => {
+                      this.router.navigate(['/sucursales']);
+                  }
                 }
             ]
         }
